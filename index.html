@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telkomsel 5G</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Global Styles */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #e2001a, #b00015);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 180px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    padding: 40px 0;
+}
+
+.container.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #e2001a;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container.hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-text, .hero-image {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-image {
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+        /* Keunggulan 5G Section */
+        .keunggulan {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #e2001a;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #e2001a;
+        }
+
+        .grid-keunggulan {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .keunggulan-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 5px 15px rgba(226, 0, 26, 0.05);
+        }
+
+        .keunggulan-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(226, 0, 26, 0.1);
+            border-color: #e2001a;
+        }
+
+        .keunggulan-item i {
+            font-size: 3rem;
+            color: #e2001a;
+            margin-bottom: 20px;
+        }
+
+        .keunggulan-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #e2001a;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Speed Test Section */
+        .speed-test {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .speed-test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .speed-test-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(226, 0, 26, 0.1);
+            border: 1px solid #eaeaea;
+        }
+
+        .speed-test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .speed-test-header h3 {
+            font-size: 1.8rem;
+            color: #e2001a;
+            margin-bottom: 10px;
+        }
+
+        .speed-test-button {
+            background-color: #e2001a;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(226, 0, 26, 0.3);
+        }
+
+        .speed-test-button:hover {
+            background-color: #c10015;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(226, 0, 26, 0.4);
+        }
+
+        .speed-test-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .speed-test-visual {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .speed-test-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #e2001a, #ff4d4d);
+            transition: width 0.3s ease;
+        }
+
+        .speed-test-results {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .speed-test-result {
+            text-align: center;
+            flex: 1;
+            padding: 0 15px;
+            min-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .speed-test-result h4 {
+            color: #e2001a;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .speed-test-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e2001a;
+        }
+
+        .speed-test-unit {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .speed-test-status {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #e2001a;
+            min-height: 24px;
+        }
+
+        .server-selection {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .server-info {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .network-info {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            min-height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #333, #111);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #e2001a;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #e2001a;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 15px;
+            }
+      
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #e2001a;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container.hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-text, .hero-image {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-image {
+        justify-content: center;
+        margin-top: 30px;
+    }
+}
+
+            .speed-test-results {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .speed-test-result {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="./image/Telkomsel_2021_icon.svg.png" alt="Telkomsel Icon" style="width: 30px; height: auto;">
+                <img src="./image/WhatsApp_Image_2025-05-09_at_11.17.12_715f4b63-removebg-preview.png" alt="Telkomsel Text Logo" style="width: 100px; height: auto; margin-left: -5px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#keunggulan">Keunggulan</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#speedtest">Speed Test</a></li>
+                    <li><a href="#daftar">Daftar Sekarang</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(226, 0, 26, 0.7), rgba(226, 0, 26, 0.8)), url('./image/merah\ orange.webp') center/cover no-repeat;">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Selamat Datang di Era 5G Telkomsel</h1>
+                <p>Nikmati pengalaman internet super cepat dengan jaringan 5G Telkomsel yang telah tersedia di berbagai kota di Indonesia. Kecepatan hingga 10x lebih cepat dari 4G!</p>
+                <a href="#daftar" class="cta-button">DAFTAR SEKARANG</a>
+            </div>
+            <div class="hero-image">
+                <img src="./image/5G.webp" alt="5G Illustration" style="width: 100%; max-width: 750px; height: auto; border-radius: 20px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan 5G Section -->
+    <section id="keunggulan" class="keunggulan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Keunggulan Jaringan 5G Telkomsel</h2>
+            </div>
+            <div class="grid-keunggulan">
+                <div class="keunggulan-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Super Cepat</h3>
+                    <p>Kecepatan unduh hingga 10x lebih cepat dari jaringan 4G, memungkinkan streaming 4K tanpa buffering.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Latensi Rendah</h3>
+                    <p>Latensi ultra-rendah di bawah 1ms, sempurna untuk gaming online dan real-time collaboration.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <i class="fas fa-plug"></i>
+                    <h3>Koneksi Stabil</h3>
+                    <p>Jaringan lebih stabil dengan kapasitas tinggi, ideal untuk daerah padat pengguna.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Kompatibel</h3>
+                    <p>Didukung oleh berbagai perangkat 5G terbaru dari brand ternama.</p>
+                </div>
+          
+                <div class="keunggulan-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Keamanan Tinggi</h3>
+                    <p>Teknologi terbaru dengan sistem keamanan canggih untuk perlindungan data Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Telkomsel 5G - Ubah Cara Anda Terhubung</h2>
+            </div>
+            <div class="video-container">
+                <!-- Correct YouTube Video Embed -->
+                <iframe src="https://www.youtube.com/embed/7vtLUo51yVE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speed Test Section -->
+    <section id="speedtest" class="speed-test">
+        <div class="container">
+            <div class="section-title">
+                <h2>Test Kecepatan Jaringan 5G Anda</h2>
+            </div>
+            <div class="speed-test-container">
+                <div class="speed-test-box">
+                    <div class="speed-test-header">
+                        <h3>Uji Kecepatan Jaringan Anda</h3>
+                        <p>Ukur kecepatan unduh, unggah, dan ping jaringan Anda secara real-time</p>
+                    </div>
+                    
+                    <div class="server-selection">
+                        <div class="server-info">
+                            <i class="fas fa-server"></i> Server: Telkomsel (Otomatis)
+                        </div>
+                    </div>
+                    
+                    <div class="speed-test-visual">
+                        <div class="speed-test-progress" id="speedTestProgress"></div>
+                    </div>
+                    
+                    <button id="startTest" class="speed-test-button">
+                        <i class="fas fa-play"></i> MULAI TEST
+                    </button>
+                    
+                    <div class="speed-test-status" id="speedTestStatus">
+                        Klik tombol di atas untuk memulai pengujian
+                    </div>
+                    
+                    <div class="speed-test-results">
+                        <div class="speed-test-result">
+                            <h4>DOWNLOAD</h4>
+                            <div class="speed-test-value" id="downloadSpeed">-</div>
+                            <div class="speed-test-unit">Mbps</div>
+                        </div>
+                        <div class="speed-test-result">
+                            <h4>UPLOAD</h4>
+                            <div class="speed-test-value" id="uploadSpeed">-</div>
+                            <div class="speed-test-unit">Mbps</div>
+                        </div>
+                        <div class="speed-test-result">
+                            <h4>PING</h4>
+                            <div class="speed-test-value" id="pingValue">-</div>
+                            <div class="speed-test-unit">ms</div>
+                        </div>
+                        <div class="speed-test-result">
+                            <h4>JITTER</h4>
+                            <div class="speed-test-value" id="jitterValue">-</div>
+                            <div class="speed-test-unit">ms</div>
+                        </div>
+                    </div>
+                    
+                    <div class="network-info" id="networkInfo">
+                        Mendeteksi informasi jaringan...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Telkomsel</h3>
+                    <ul>
+                        <li><a href="#">Profil Perusahaan</a></li>
+                        <li><a href="#">Penghargaan</a></li>
+                        <li><a href="#">CSR</a></li>
+                        <li><a href="#">Karir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Produk & Layanan</h3>
+                    <ul>
+                        <li><a href="#">Paket Internet</a></li>
+                        <li><a href="#">Roaming</a></li>
+                        <li><a href="#">Telkomsel Poin</a></li>
+                        <li><a href="#">MyTelkomsel App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Dukungan</h3>
+                    <ul>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Cek Cakupan</a></li>
+                        <li><a href="#">Lokasi GraPARI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Telkomsel. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Speed Test Implementation
+        let testInProgress = false;
+        let downloadHistory = [];
+        let uploadHistory = [];
+        let pingResults = [];
+        
+        // UI Elements
+        const startButton = document.getElementById('startTest');
+        const progressBar = document.getElementById('speedTestProgress');
+        const downloadSpeed = document.getElementById('downloadSpeed');
+        const uploadSpeed = document.getElementById('uploadSpeed');
+        const pingValue = document.getElementById('pingValue');
+        const jitterValue = document.getElementById('jitterValue');
+        const statusText = document.getElementById('speedTestStatus');
+        const networkInfo = document.getElementById('networkInfo');
+        
+        // Format speed values
+        function formatSpeed(speed) {
+            if (speed === '-' || speed === undefined || speed === null) return '-';
+            return speed >= 1000 ? (speed / 1000).toFixed(1) + ' Gbps' : Math.round(speed) + ' Mbps';
+        }
+        
+        // Format ping/jitter values
+        function formatPing(ping) {
+            if (ping === '-' || ping === undefined || ping === null) return '-';
+            return Math.round(ping) + ' ms';
+        }
+        
+        // Detect network information
+        function detectNetworkInfo() {
+            try {
+                if (navigator.connection) {
+                    const connection = navigator.connection;
+                    let info = 'Jaringan: ';
+                    
+                    if (connection.type) {
+                        info += `${connection.type}`;
+                        if (connection.effectiveType) {
+                            info += ` (${connection.effectiveType})`;
+                        }
+                    } else if (connection.effectiveType) {
+                        info += `${connection.effectiveType}`;
+                    } else {
+                        info += 'Tidak terdeteksi';
+                    }
+                    
+                    if (connection.downlink) {
+                        info += ` | Perkiraan kecepatan: ${connection.downlink} Mbps`;
+                    }
+                    
+                    if (connection.rtt) {
+                        info += ` | RTT: ${connection.rtt} ms`;
+                    }
+                    
+                    networkInfo.textContent = info;
+                } else {
+                    networkInfo.textContent = 'Informasi jaringan tidak tersedia di browser ini';
+                }
+            } catch (e) {
+                networkInfo.textContent = 'Tidak dapat mendeteksi informasi jaringan';
+                console.error('Network info error:', e);
+            }
+        }
+        
+        // Calculate jitter from ping results
+        function calculateJitter(pings) {
+            if (!pings || pings.length < 2) return 0;
+            
+            const differences = [];
+            for (let i = 1; i < pings.length; i++) {
+                differences.push(Math.abs(pings[i] - pings[i-1]));
+            }
+            
+            const sum = differences.reduce((a, b) => a + b, 0);
+            return sum / differences.length;
+        }
+        
+        // Simulate ping test (modified to be <70ms)
+        async function simulatePing() {
+            pingResults = [];
+            const basePing = 30 + Math.random() * 30; // Ping 30-60ms
+            
+            for (let i = 0; i < 5; i++) {
+                const pingTime = basePing + (Math.random() * 10 - 5); // Small variation
+                pingResults.push(pingTime);
+                pingValue.textContent = formatPing(pingTime);
+                await new Promise(resolve => setTimeout(resolve, 300));
+            }
+            
+            const avgPing = pingResults.reduce((a, b) => a + b, 0) / pingResults.length;
+            const jitter = calculateJitter(pingResults);
+            
+            pingValue.textContent = formatPing(avgPing);
+            jitterValue.textContent = formatPing(jitter);
+            
+            return { avgPing, jitter };
+        }
+        
+        // Simulate download/upload test with modified speeds
+        async function simulateSpeedTest(type, duration) {
+            const startTime = Date.now();
+            const endTime = startTime + duration;
+            const speeds = [];
+            
+            // Modified base speeds to meet requirements
+            const baseDownload = 30 + Math.random() * 25; // 30-55 Mbps (guaranteed <60)
+            const baseUpload = 15 + Math.random() * 20; // 15-35 Mbps (guaranteed <40)
+            
+            while (Date.now() < endTime) {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Update progress bar based on test type
+                if (type === 'download') {
+                    progressBar.style.width = `${progress * 50}%`;
+                } else {
+                    progressBar.style.width = `${50 + progress * 50}%`;
+                }
+                
+                // Simulate speed with variations
+                let currentSpeed;
+                if (type === 'download') {
+                    currentSpeed = baseDownload * (0.8 + Math.random() * 0.4); // 24-55 Mbps
+                } else {
+                    currentSpeed = baseUpload * (0.7 + Math.random() * 0.6); // 10.5-35 Mbps
+                }
+                
+                speeds.push(currentSpeed);
+                
+                // Update speed display
+                const avgSpeed = speeds.reduce((a, b) => a + b, 0) / speeds.length;
+                
+                if (type === 'download') {
+                    downloadSpeed.textContent = formatSpeed(avgSpeed);
+                } else {
+                    uploadSpeed.textContent = formatSpeed(avgSpeed);
+                }
+                
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            
+            return speeds;
+        }
+        
+        // Main speed test function
+        async function startSpeedTest() {
+            if (testInProgress) return;
+            
+            try {
+                testInProgress = true;
+                downloadHistory = [];
+                uploadHistory = [];
+                pingResults = [];
+                
+                startButton.disabled = true;
+                startButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> MENGUKUR...';
+                
+                // Reset previous results
+                downloadSpeed.textContent = '-';
+                uploadSpeed.textContent = '-';
+                pingValue.textContent = '-';
+                jitterValue.textContent = '-';
+                progressBar.style.width = '0%';
+                
+                // 1. Ping Test
+                statusText.textContent = 'Mengukur ping ke server...';
+                statusText.style.color = '#e2001a';
+                await simulatePing();
+                
+                // 2. Download Test
+                statusText.textContent = 'Mengukur kecepatan download...';
+                downloadHistory = await simulateSpeedTest('download', 5000);
+                
+                // 3. Upload Test
+                statusText.textContent = 'Mengukur kecepatan upload...';
+                uploadHistory = await simulateSpeedTest('upload', 5000);
+                
+                // Calculate final results
+                const finalDownload = downloadHistory.reduce((a, b) => a + b, 0) / downloadHistory.length;
+                const finalUpload = uploadHistory.reduce((a, b) => a + b, 0) / uploadHistory.length;
+                
+                // Display final results
+                downloadSpeed.textContent = formatSpeed(finalDownload);
+                uploadSpeed.textContent = formatSpeed(finalUpload);
+                
+                // Provide feedback based on results
+                if (finalDownload > 40) {
+                    statusText.textContent = 'Kecepatan jaringan cukup baik';
+                    statusText.style.color = '#FFC107';
+                } else {
+                    statusText.textContent = 'Kecepatan jaringan standar';
+                    statusText.style.color = '#e2001a';
+                }
+                
+            } catch (error) {
+                console.error('Speed test error:', error);
+                statusText.textContent = 'Terjadi error saat pengujian. Silakan coba lagi.';
+                statusText.style.color = '#F44336';
+            } finally {
+                testInProgress = false;
+                startButton.disabled = false;
+                startButton.innerHTML = '<i class="fas fa-redo"></i> ULANGI TEST';
+                progressBar.style.width = '100%';
+            }
+        }
+        
+        // Event listeners
+        startButton.addEventListener('click', startSpeedTest);
+        window.addEventListener('load', detectNetworkInfo);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
