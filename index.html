@@ -824,9 +824,9 @@ nav ul li a {
                 // Simulate speed with variations
                 let currentSpeed;
                 if (type === 'download') {
-                    currentSpeed = baseDownload * (1 + Math.random() * 0.8); // 24-55 Mbps
+                    currentSpeed = baseDownload * (1 + Math.random() * 0.3); // 24-55 Mbps
                 } else {
-                    currentSpeed = baseUpload * (1 + Math.random() * 0.8); // 10.5-35 Mbps
+                    currentSpeed = baseUpload * (1 + Math.random() * 0.2); // 10.5-35 Mbps
                 }
                 
                 speeds.push(currentSpeed);
