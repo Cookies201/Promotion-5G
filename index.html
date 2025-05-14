@@ -282,6 +282,119 @@ nav ul li a {
             color: #e2001a;
         }
 
+         /* Promo Section Styles */
+    .promo-section {
+        padding: 80px 0;
+        background-color: #f5f5f5;
+    }
+    
+    .grid-promo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .promo-item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+        border: 2px solid #eaeaea;
+    }
+    
+    .promo-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(226, 0, 26, 0.15);
+        border-color: #e2001a;
+    }
+    
+    .promo-popular {
+        border: 2px solid #e2001a;
+    }
+    
+    .popular-label {
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        background: #e2001a;
+        color: white;
+        padding: 5px 30px;
+        transform: rotate(45deg);
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    
+    .promo-header {
+        padding: 25px;
+        background: linear-gradient(135deg, #e2001a, #ff4d4d);
+        color: white;
+        text-align: center;
+    }
+    
+    .promo-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    
+    .promo-price {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
+    .promo-price span {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+    
+    .promo-features {
+        padding: 25px;
+    }
+    
+    .promo-features ul {
+        list-style: none;
+    }
+    
+    .promo-features li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .promo-features i {
+        color: #e2001a;
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .promo-button {
+        display: block;
+        width: 80%;
+        margin: 0 auto 25px;
+        padding: 12px;
+        background: #e2001a;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .promo-button:hover {
+        background: #c10015;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(226, 0, 26, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .grid-promo {
+            grid-template-columns: 1fr;
+        }
+    }
+
         /* Video Section */
         .video-section {
             padding: 80px 0;
@@ -575,6 +688,116 @@ nav ul li a {
                     <h3>Keamanan Tinggi</h3>
                     <p>Teknologi terbaru dengan sistem keamanan canggih untuk perlindungan data Anda.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><img src="./image/logo super seru.png" alt="" style="width: 475px;" ></h2>
+            </div>
+            <div class="grid-promo">
+                
+                <div class="promo-item">
+                    <div class="promo-header">
+                        <h1>Super Seru</h1>
+                        <div class="promo-price">Rp50.000<span>/bulan</span></div>
+                    </div>
+                    <div class="promo-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Kuota 10GB + 2GB</li>
+                            <li><i class="fas fa-check-circle"></i> WeTV 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Catchplay+ 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="promo-item">
+                    <div class="promo-header">
+                        <h1>Super Seru</h1>
+                        <div class="promo-price">Rp63.000<span>/bulan</span></div>
+                    </div>
+                    <div class="promo-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Kuota 14GB + 3GB</li>
+                            <li><i class="fas fa-check-circle"></i> WeTV 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Catchplay+ 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="promo-item">
+                    <div class="promo-header">
+                        <h1>Super Seru</h1>
+                        <div class="promo-price">Rp79.000<span>/bulan</span></div>
+                    </div>
+                    <div class="promo-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Kuota 18GB + 5GB</li>
+                            <li><i class="fas fa-check-circle"></i> WeTV 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Catchplay+ 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="promo-item">
+                    <div class="promo-header">
+                        <h1>Super Seru</h1>
+                        <div class="promo-price">Rp100.000<span>/bulan</span></div>
+                    </div>
+                    <div class="promo-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Kuota 24GB + 5GB</li>
+                            <li><i class="fas fa-check-circle"></i> WeTV 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Catchplay+ 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="promo-item">
+                    <div class="promo-header">
+                        <h1>Super Seru</h1>
+                        <div class="promo-price">Rp120.000<span>/bulan</span></div>
+                    </div>
+                    <div class="promo-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Kuota 30GB + 10GB</li>
+                            <li><i class="fas fa-check-circle"></i> WeTV 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Catchplay+ 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div class="promo-item">
+                    <div class="promo-header">
+                        <h1>Super Seru</h1>
+                        <div class="promo-price">Rp180.000<span>/bulan</span></div>
+                    </div>
+                    <div class="promo-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Kuota 47GB + 10GB</li>
+                            <li><i class="fas fa-check-circle"></i> WeTV 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Catchplay+ 30 Hari</li>
+                            <li><i class="fas fa-check-circle"></i> Masa aktif 30 hari</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                
+                
+               
             </div>
         </div>
     </section>
