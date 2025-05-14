@@ -368,26 +368,32 @@ nav ul li a {
         margin-right: 10px;
         font-size: 1.2rem;
     }
-    
-    .promo-button {
-        display: block;
-        width: 80%;
-        margin: 0 auto 25px;
-        padding: 12px;
-        background: #e2001a;
-        color: white;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
+    .section-title {
+    text-align: center; /* Pusatkan logo */
+    padding: 20px 0; /* Spasi atas-bawah */
+  }
+  
+  .responsive-logo {
+    max-width: 475px;
+    width: 100%;
+    height: auto;
+    display: block; /* Hilangkan spasi bawah */
+    margin: 0 auto; /* Pusatkan gambar */
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 768px) {
+    .responsive-logo {
+      max-width: 350px;
     }
-    
-    .promo-button:hover {
-        background: #c10015;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(226, 0, 26, 0.3);
+  }
+  
+  @media (max-width: 480px) {
+    .responsive-logo {
+      max-width: 250px;
     }
+  }
+
     
     @media (max-width: 768px) {
         .grid-promo {
@@ -695,8 +701,8 @@ nav ul li a {
     <section class="promo-section">
         <div class="container">
             <div class="section-title">
-                <h2><img src="./image/logo super seru.png" alt="" style="max-width : 475px; width: 100%; height: auto;" ></h2>
-            </div>
+                <img src="./image/logo super seru.png" alt="Logo Super Seru" class="responsive-logo">
+              </div>
             <div class="grid-promo">
                 
                 <div class="promo-item">
